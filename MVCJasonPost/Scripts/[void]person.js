@@ -5,14 +5,16 @@
         $.ajax({
             url: "Person/GoodSave",
             dataType: 'json',
-            contentType: "application/json",
+            contentType: 'application/json',
             type: "POST",
-            data: JSON.stringify(request), //Ahhh, much better
+            data: JSON.stringify(request),
             success: function (response) {
-                $("#result").text(response.result);
+                $('#result').text(response.result);
             }
         });
+
     });
+
 
     $('#bad').click(function () {
         var request = new PersonModel();
@@ -20,10 +22,11 @@
         $.ajax({
             url: "Person/BadSave",
             dataType: 'json',
+            //contentType: 'application/json',
             type: "POST",
-            data: "first=" + request.First + "&last=" + request.Last + "&favoriteBands=" + request.FavoriteBands, //How do you encode an array?? This doesn't even work right
+            data: "&first=" + request.First + "&last=" + request.Last + "&favoriteBands=" + request.FavoriteBands,
             success: function (response) {
-                $("#result").text(response.result);
+                $('#result').text(response.result);
             }
         });
     });
@@ -35,5 +38,5 @@ function PersonModel() {
     self.Last = $("#Last").val();
 
     self.FavoriteBands = $.map($('#FavoriteBands option:selected'),
-                      function (e) { return $(e).val(); });
+        function (e) { return $(e).val(); });
 }
