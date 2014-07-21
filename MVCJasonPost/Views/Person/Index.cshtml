@@ -1,39 +1,53 @@
-﻿@model MVCJasonPost.Models.PersonModel
+﻿@model IEnumerable<MVCJasonPost.Models.PersonModel>
 
 @{
-    ViewBag.Title = "Hołm";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = null;
 }
 
-<h2>Hołm</h2>
-<div>
-    @Html.LabelFor(m => m.First)
-    @Html.EditorFor(m => m.First)
-</div>
+<!DOCTYPE html>
 
-<div>
-    @Html.LabelFor(m => m.Last)
-    @Html.EditorFor(m => m.Last)
-</div>
-
-<div>
-    @Html.LabelFor(m => m.FavoriteBands)
-    @Html.DropDownListFor(m => m.FavoriteBands, new SelectList(
-    new List<Object>{
-    new {value=0, text = "Jożin z Bażin"},
-    new {value=1, text = "Megadeath"},
-    new {value=2, text = "Fasolki"}
-    },
-    "value",
-    "text",
-    Model.FavoriteBands),
-    new { multiple = "multiple" })
-</div>
-
-<div>
-    <input type="button" value="Bad Submit" id="bad" />
-    <input type="button" value="Good Submit" id="good" />
-
-</div>
-
-<label id="result"></label>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.First)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Last)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FavoriteBands)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.First)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Last)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FavoriteBands)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+                @*@Html.ActionLink("Details", "Details", new { id=item.id }) |*@
+                @Html.ActionLink("Delete", "Delete", new { id=item.id })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

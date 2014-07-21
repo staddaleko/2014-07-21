@@ -1,0 +1,50 @@
+﻿@model MVCJasonPost.Models.PersonModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h3>Are you sure you want to delete this?</h3>
+    <fieldset>
+        <legend>PersonModel</legend>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.First)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.First)
+        </div>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.Last)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Last)
+        </div>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.FavoriteBands)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.FavoriteBands)
+        </div>
+    </fieldset>
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+        <p>
+            @Html.HiddenFor(model => model.id)
+            <input type="submit" value="Delete" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    }
+
+</body>
+</html>
