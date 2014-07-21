@@ -1,5 +1,7 @@
 ﻿$(document).ready(function () {
     $('#good').click(function () {
+
+        
         var request = new PersonModel();
 
         $.ajax({
