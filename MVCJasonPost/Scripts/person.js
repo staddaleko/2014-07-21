@@ -31,3 +31,12 @@
         });
     });
 });
+
+function PersonModel() {
+    var self = this;
+    self.First = $("#First").val();
+    self.Last = $("#Last").val();
+
+    self.FavoriteBands = $.map($('#FavoriteBands option:selected'),
+        function (e) { return $(e).val(); });
+}
