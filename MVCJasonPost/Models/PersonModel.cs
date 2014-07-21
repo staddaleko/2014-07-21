@@ -11,7 +11,7 @@ namespace MVCJasonPost.Models
     public class PersonModel
     {
         [DisplayName("First")]
-        public string First  { get; set; }
+        public string First { get; set; }
         [DisplayName("Last")]
         public string Last { get; set; }
         [DisplayName("Favorite Bands")]
