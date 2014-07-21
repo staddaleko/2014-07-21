@@ -11,6 +11,7 @@ namespace MVCJasonPost.API
     public class MyAPIController : ApiController
     {
         public DB db = new DB();
+        
         public IEnumerable<PersonModel> Get()
         {
             return db.Persons.ToList();
