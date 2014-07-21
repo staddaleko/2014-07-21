@@ -24,7 +24,7 @@
             dataType: 'json',
             //contentType: 'application/json',
             type: "POST",
-            data: "first=" + request.First + "&last=" + request.Last + "&favoriteBands=" + request.FavoriteBands,
+            data: "&first=" + request.First + "&last=" + request.Last + "&favoriteBands=" + request.FavoriteBands,
             success: function (response) {
                 $('#result').text(response.result);
             }
