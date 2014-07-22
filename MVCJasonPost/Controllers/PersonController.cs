@@ -41,7 +41,44 @@ namespace MVCJasonPost.Controllers
 
                 return View("Create");
             }
+            //List<string> person = new List<string>();
+            //        person.Add(obj.First);
+            //        person.Add(obj.Last);
+            //        person.Add(obj.FavoriteBands);
+            //        api.Post(person);
+            //        return RedirectToAction("Index");
         }
+
+
+            //PersonModel ludz = new PersonModel();
+            //ViewBag.serializacja = JsonHelper.JsonSerializer<PersonModel>)(ludz);
+        
+        
+        // List<Kobieta> lista = new List<Kobieta>{ k_c, k_l, k_lj };
+
+        //    ViewBag.Serializacja = JsonHelper.JsonSerializer<List<Kobieta>>(lista);
+        //    List<Kobieta> Deserializacja = JsonHelper.JsonDeserialize<List<Kobieta>>(ViewBag.Serializacja);
+        //    return View("Index", Deserializacja );
+        //}
+
+        //public ActionResult Create()
+        //{
+        //    return View("Create");
+        //}
+
+        //[HttpPost]
+        //public ActionResult Create(Kobieta K)
+        //{
+        //    ViewBag.str = K;
+        //    //Kobieta Deserializacja = JsonHelper.JsonDeserialize<Kobieta>(K);
+        //    ViewBag.Serializacja = JsonHelper.JsonSerializer<Kobieta>(K);
+        //    Kobieta Deserializacja = JsonHelper.JsonDeserialize<Kobieta>(ViewBag.Serializacja);
+        //    //List<Kobieta> Des = new List<Kobieta> { };
+        //    //Des.Add(k);
+        //    return View("Form", Deserializacja);
+        //}
+
+
 
         public ActionResult Edit(int id)
         {
@@ -127,5 +164,9 @@ namespace MVCJasonPost.Controllers
             return Json(new { result = "saved the good way" });
 
         }
+
+
     }
+
+
 }
